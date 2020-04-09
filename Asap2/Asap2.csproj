@@ -90,6 +90,7 @@
     <Compile Include="tools\Merger.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Asap2.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup Label="Asap2Files">
@@ -130,6 +131,13 @@
       <Output TaskParameter="Outputs" ItemName="Asap2" />
     </Exec>
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>$(SolutionDir).nuget\Nuget.exe pack "$(ProjectPath)" ^
+-Properties Configuration=$(ConfigurationName) ^
+-OutputDirectory "$(SolutionDir)Outputs\NugetPackages" ^
+-IncludeReferencedProjects ^
+-Symbols</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

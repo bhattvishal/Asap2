@@ -7,9 +7,13 @@
     <authors>$author$</authors>
     <owners>$author$</owners>
     <projectUrl>https://github.com/kallemooo/Asap2</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
     <copyright>$copyright$</copyright>
+    <license type="file">LICENSE.txt</license>
     <tags>a2l ASAP2</tags>
   </metadata>
+  <files>    
+    <file src="LICENSE.txt" target="" />
+  </files>
 </package>
